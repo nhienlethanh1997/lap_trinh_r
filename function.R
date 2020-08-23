@@ -69,3 +69,45 @@ tinh_cuoc_xe.function = function(km, dv) {
     
     return (tien_dv)
 }
+
+tinh_BMI.function = function(h, w) {
+    bmi = w/(h^2)
+    if (bmi < 18.5) {
+        res = "Gay"
+    } else if (bmi < 25) {
+        res = "Binh thuong"
+    } else {
+        res = "Thua can"
+    }
+    return (c(bmi, res))
+}
+
+giai_pt_1.funcion = function(a, b) {
+    if (a == 0 && b != 0) {
+        res = "PT vo nghiem"
+    } else if (a == 0 && b == 0) {
+        res = "PT vo so nghiem"
+    } else {
+        res = paste("Nghiem:", -b/a)
+    }
+    return (res)
+}
+
+giai_pt_2.function = function(a, b, c) {
+    if (a == 0) {
+        res = giai_pt_1.funcion(b, c)
+    } else {
+        delta = b^2 - 4*a*c
+        if (delta < 0) {
+            res = "PT vo nghiem"
+        } else if (delta == 0) {
+            nghiem = -b/2*a
+            res = paste("x1 = x2 =", nghiem)
+        } else {
+            x1 = (-b + sqrt(delta))/(2*a)
+            x2 = (-b - sqrt(delta))/(2*a)
+            res = paste("x1 =", x1, ", x2 =", x2)
+        }
+    }
+    return (res)
+}
